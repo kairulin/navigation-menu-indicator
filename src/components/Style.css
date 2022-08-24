@@ -1,0 +1,81 @@
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 70px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 30px;
+    gap: 10px;
+}
+.navigation div{
+    display: flex;
+}
+
+.navigation div .navigation-indicator{
+    position: absolute;
+    top: -35%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: red;
+    border: 5px solid #222327;
+    
+}
+
+
+.navigation div .navigation-indicator::before{
+    position: absolute;
+    content: '';
+    left: -15px;
+    top: 35%;
+    width: 10px;
+    height: 10px;
+    box-shadow: 5px -2px  #222327;
+    border-top-right-radius: 20px;
+    background: transparent;
+}
+
+.navigation div .navigation-indicator::after{
+    position: absolute;
+    content: '';
+    right: -15px;
+    top: 35%;
+    width: 10px;
+    height: 10px;
+    box-shadow: -5px -2px  #222327;
+    border-top-left-radius: 20px;
+    background: transparent;
+
+}
+
+.navigation div .navigation-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    position: relative;
+}
+
+.navigation div .navigation-item .icon{
+    z-index: 1;
+    font-size: 1.5rem;
+    transform: translateY(40%);
+    transition: all .3s;
+}
+.navigation div .navigation-item .icon.active{
+    transform: translateY(-50%);
+}
+.navigation div .navigation-item .name{
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all .3s;
+
+}
+.navigation div .navigation-item .name.active{
+    opacity:1;
+    transform: translateY(0px);
+
+}
