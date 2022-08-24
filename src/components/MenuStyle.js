@@ -23,7 +23,7 @@ export const Indicator = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: red;
+    background: ${(prop) => prop.bg};
     border: 5px solid #222327;
     transform:translateX(${(prop) => prop.site});
 

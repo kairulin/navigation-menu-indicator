@@ -7,11 +7,11 @@ import { Flexdiv, Icon, Indicator, Name, Navigation, NavigationItem } from './Me
 
 const Menu = () => {
     const items = [
-        { icon: <AiOutlineHome />, name: "Home", site: "0px" },
-        { icon: <HiOutlineUser />, name: "Profile", site: "60px" },
-        { icon: <AiOutlineMessage />, name: "Message", site: "120px" },
-        { icon: <AiOutlineCamera />, name: "Photo", site: "180px" },
-        { icon: <AiOutlineSetting />, name: "Settings", site: "240px" },
+        { icon: <AiOutlineHome />, name: "Home", site: "0px",color:'red' },
+        { icon: <HiOutlineUser />, name: "Profile", site: "60px",color:'orange' },
+        { icon: <AiOutlineMessage />, name: "Message", site: "120px",color:'yellow' },
+        { icon: <AiOutlineCamera />, name: "Photo", site: "180px",color:'green' },
+        { icon: <AiOutlineSetting />, name: "Settings", site: "240px",color:'blue' },
     ]
 
     const [indicatorIndex, setIndicatorIndex] = useState(0)
@@ -20,7 +20,7 @@ const Menu = () => {
 
         <Navigation>
             <Flexdiv>
-                <Indicator site={items[indicatorIndex].site}/>
+                <Indicator site={items[indicatorIndex].site} bg={items[indicatorIndex].color}/>
                 {items.map((item, index) => (
                     <NavigationItem key={index}>
                         <Icon onClick={() => setIndicatorIndex(index)} style={indicatorIndex === index ? {transform: "translateY(-50%)"} : {transform: "translateY(40%)"}}> {item.icon}</Icon>
